@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Integration d'une DataFrame Pandas dans un serveur Postgres
+Integration d'une DataFrame Pandas dans un serveur Postgres avec psycopg2
 @author: Victor MARTY-JOURJON
 license = "MIT"
 
