@@ -3,6 +3,15 @@
 Integration d'une DataFrame Pandas dans un serveur Postgres
 @author: Victor MARTY-JOURJON
 license = "MIT"
+
+Input: 
+    schemas='public'    
+    table='temp'             :nom de la table dans la base de données postgres (schéma public) (attention!! : si la table existe déjà, elle sera remplacée !!!!)
+    db=test                :nom de la table (data frame pandas) à incérer
+    geom='geom'        :nom de la colonne géométrie (si pas de géométrie:'')
+    sird='2154'               :sytéme de coordonnées de la colonne géométrie
+    geomtype='LINESTRING'     :type de géométrie
+    geomdim=3                 :nombre de dimension de la géométrie
 """
 
 
@@ -13,15 +22,7 @@ import psycopg2
 def insert_postgres(schemas,table, db, geom, sird, geomtype, geomdim):  
     
 
-    """ 
-    schemas='public'    
-    table='temp'             :nom de la table dans la base de données postgres (schéma public) (attention!! : si la table existe déjà, elle sera remplacée !!!!)
-    db=test                :nom de la table (data frame pandas) à incérer
-    geom='geom'        :nom de la colonne géométrie (si pas de géométrie:'')
-    sird='2154'               :sytéme de coordonnées de la colonne géométrie
-    geomtype='LINESTRING'     :type de géométrie
-    geomdim=3                 :nombre de dimension de la géométrie
-    """
+
     #####################################################################################################
     #connexion à la base de données
     #####################################################################################################
